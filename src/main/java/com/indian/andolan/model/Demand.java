@@ -24,10 +24,10 @@ public class Demand implements Serializable {
 	@Column(name = "ID")
 	private Long id;
 
-	@Column(name = "EVENTID")
+	@Column(name = "EVENTID" , nullable=false)
 	private Long eventId;
 	
-	@Column(name = "DEMAND")
+	@Column(name = "DEMAND" , nullable=false)
 	private String demand;
 
 	public Demand() {

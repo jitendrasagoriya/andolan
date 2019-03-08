@@ -21,7 +21,7 @@ public class Team implements Serializable {
 	@EmbeddedId
 	private TeamPrimeryKey id;
 
-	@Column(name = "POSITION")
+	@Column(name = "POSITION" , nullable = false)
 	private Position position;
 
 	/**

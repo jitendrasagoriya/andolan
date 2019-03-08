@@ -12,6 +12,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
 
 /**
  * @author JITENDRA SAGORIYA
@@ -35,13 +36,13 @@ public class Photos implements Serializable {
 	@Column(name = "EVENTID")
 	private Long eventId;
 	
-	@Column(name = "EVENTUPDATEID")
+	@Column(name = "EVENTUPDATEID" , nullable = false)
 	private Long eventUpdateId;
 	
-	@Column(name = "PHOTO")
+	@Column(name = "PHOTO" , nullable = false)
 	private String photo;
 	
-	@Column(name = "DATE")
+	@Column(name = "DATE" , nullable = false)
 	private Timestamp date;
 
 	/**

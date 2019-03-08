@@ -26,22 +26,22 @@ public class Member implements Serializable{
 	@Column(name = "MEMBERID")
 	private Long memberId;
 
-	@Column(name = "MEMBERNAME")
+	@Column(name = "MEMBERNAME" , nullable=false)
 	private String memberName;
 
-	@Column(name = "POSITION")
+	@Column(name = "POSITION" , nullable=false)
 	private Position posiption;
 
-	@Column(name = "USERNAME")
+	@Column(name = "USERNAME" , nullable=false,length=15)
 	private String userName;
 	
-	@Column(name = "PASSWORD")
+	@Column(name = "PASSWORD" , nullable=false ,length=10)
 	private String password;
 
-	@Column(name = "AGE")
+	@Column(name = "AGE" , nullable=false ,length=3)
 	private int age;
 
-	@Column(name = "GENDER")
+	@Column(name = "GENDER" , nullable=false)
 	private Gender gender;
 
 	/**

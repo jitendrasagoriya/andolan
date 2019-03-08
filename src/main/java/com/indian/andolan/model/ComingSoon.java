@@ -26,19 +26,19 @@ public class ComingSoon implements Serializable {
 	@Column(name = "EVENTID")
 	private Long eventId;
 
-	@Column(name = "DATE")
+	@Column(name = "DATE" , nullable=false)
 	private Timestamp date;
 
-	@Column(name = "HEADING")
+	@Column(name = "HEADING" , nullable=false)
 	private String heading;
 
 	@Column(name = "CURRENTUPDATE")
 	private String currentUpdate;
 
-	@Column(name = "CURRENTCITY")
+	@Column(name = "CURRENTCITY" , nullable=false)
 	private String currentCity;
 
-	@Column(name = "CURRENTSTATE")
+	@Column(name = "CURRENTSTATE" , nullable=false)
 	private String currentState;
 
 	@Column(name = "STATUS")

@@ -12,6 +12,7 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 import com.indian.andolan.enums.EventType;
+import com.indian.andolan.enums.Status;
 
 @Entity
 @Table(name = "EVENT")
@@ -23,37 +24,37 @@ public class Event implements Serializable {
 	private static final long serialVersionUID = 8026779251738346435L;
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "event_seq")
-	@SequenceGenerator(name = "event_seq", sequenceName = "event_sequence", allocationSize = 20)
+	/*@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "event_seq")
+	@SequenceGenerator(name = "event_seq", sequenceName = "event_sequence", allocationSize = 20)*/
 	@Column(name = "EVENTID")
-	private Long eventId;
+	private String eventId;
 
-	@Column(name = "EVENTNAME")
+	@Column(name = "EVENTNAME",length = 150,nullable=false, unique=true)
 	private String eventName;
 
-	@Column(name = "EVENTPROBLEM")
+	@Column(name = "EVENTPROBLEM", length = 500, nullable = false)
 	private String eventProblem;
 
-	@Column(name = "CPMMITTEEORSTARTBY")
+	@Column(name = "CPMMITTEEORSTARTBY",nullable= false)
 	private String committeeorstartby;
 
-	@Column(name = "STATE")
-	private String state;
+	@Column(name = "STATE", nullable=false)
+	private Status state;
 
-	@Column(name = "CITY")
+	@Column(name = "CITY" , nullable=false)
 	private String city;
 
-	@Column(name = "DISTRICT")
+	@Column(name = "DISTRICT" , nullable=false)
 	private String district;
 
-	@Column(name = "TALUKA")
+	@Column(name = "TALUKA" , nullable=false)
 	private String taluka;
 
-	@Column(name = "EVENTDESCRIPTION")
+	@Column(name = "EVENTDESCRIPTION" , nullable=false, length= 2000)
 	private String eventDescription;
 
-	@Column(name = "NUMBEROFPARTICIPANTS")
-	private String numberOfParticipants;
+	@Column(name = "NUMBEROFPARTICIPANTS", nullable=false, length= 6)
+	private Integer numberOfParticipants;
 
 	@Column(name = "PARTICIPANTSTYPE")
 	private String participantsType;
@@ -61,13 +62,13 @@ public class Event implements Serializable {
 	@Column(name = "ADMIN")
 	private String admins;
 
-	@Column(name = "EMAILID")
+	@Column(name = "EMAILID" , nullable=false)
 	private String emailId;
 
-	@Column(name = "MOBILENUMBER")
+	@Column(name = "MOBILENUMBER" , nullable=false , length=12)
 	private String mobileNumber;
 
-	@Column(name = "EVENTLEADER")
+	@Column(name = "EVENTLEADER", nullable=false)
 	private String eventLeaders;
 
 	@Column(name = "PARTYSUPPORTED")
@@ -76,19 +77,22 @@ public class Event implements Serializable {
 	@Column(name = "TYPE")
 	private EventType type;
 
-	@Column(name = "STARTDATE")
+	@Column(name = "STARTDATE" , nullable=false)
 	private Timestamp startDate;
 
 	@Column(name = "LASTUPDATE")
 	private Timestamp lastUpdate;
+	
+	@Column(name = "ACTIVE")
+	private Boolean isActive;
 
 	public Event() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Event(Long eventId, String eventName, String eventProblem, String committeeorstartby, String state,
-			String city, String district, String taluka, String eventDescription, String numberOfParticipants,
+	public Event(String eventId, String eventName, String eventProblem, String committeeorstartby, Status state,
+			String city, String district, String taluka, String eventDescription, Integer numberOfParticipants,
 			String participantsType, String admins, String emailId, String mobileNumber, String eventLeaders,
 			String partySupported, EventType type, Timestamp startDate, Timestamp lastUpdate) {
 		super();
@@ -116,14 +120,14 @@ public class Event implements Serializable {
 	/**
 	 * @return the eventId
 	 */
-	public Long getEventId() {
+	public String getEventId() {
 		return eventId;
 	}
 
 	/**
 	 * @param eventId the eventId to set
 	 */
-	public void setEventId(Long eventId) {
+	public void setEventId(String eventId) {
 		this.eventId = eventId;
 	}
 
@@ -172,14 +176,14 @@ public class Event implements Serializable {
 	/**
 	 * @return the state
 	 */
-	public String getState() {
+	public Status getState() {
 		return state;
 	}
 
 	/**
 	 * @param state the state to set
 	 */
-	public void setState(String state) {
+	public void setState(Status state) {
 		this.state = state;
 	}
 
@@ -242,14 +246,14 @@ public class Event implements Serializable {
 	/**
 	 * @return the numberOfParticipants
 	 */
-	public String getNumberOfParticipants() {
+	public Integer getNumberOfParticipants() {
 		return numberOfParticipants;
 	}
 
 	/**
 	 * @param numberOfParticipants the numberOfParticipants to set
 	 */
-	public void setNumberOfParticipants(String numberOfParticipants) {
+	public void setNumberOfParticipants(Integer numberOfParticipants) {
 		this.numberOfParticipants = numberOfParticipants;
 	}
 
@@ -377,6 +381,21 @@ public class Event implements Serializable {
 	 */
 	public void setLastUpdate(Timestamp lastUpdate) {
 		this.lastUpdate = lastUpdate;
+	}
+
+	
+	/**
+	 * @return the isActive
+	 */
+	public Boolean getIsActive() {
+		return isActive;
+	}
+
+	/**
+	 * @param isActive the isActive to set
+	 */
+	public void setIsActive(Boolean isActive) {
+		this.isActive = isActive;
 	}
 
 	/*
