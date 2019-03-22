@@ -28,7 +28,8 @@ public class EventBuilder {
 		event.setStartDate(new Timestamp(System.currentTimeMillis()));
 		event.setTaluka("Kararaiya");
 		event.setType(EventType.HUNGERSTRIK);
-		event.setState(Status.INPROGRESS);
+		event.setStatus(Status.INPROGRESS);
+		event.setState("MP");
 		event.setIsActive(Boolean.FALSE);
 		return event;
 	}

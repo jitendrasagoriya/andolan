@@ -26,7 +26,13 @@ public enum Gender {
 	    }
 	 }
 	
-	
+	public static Map<Integer, String> getMap(){
+		Map<Integer, String> map = new HashMap<>();
+		 for (Gender e : Gender.values() ) {
+			 map.put(e.id, e.value);
+		 }
+		return map;
+	}
 	public static Gender getById(int id) {
 	    return byId.get(id);
 	 }

@@ -39,7 +39,10 @@ public class Event implements Serializable {
 	private String committeeorstartby;
 
 	@Column(name = "STATE", nullable=false)
-	private Status state;
+	private String state;
+	
+	@Column(name = "STATUS", nullable=false)
+	private Status status;
 
 	@Column(name = "CITY" , nullable=false)
 	private String city;
@@ -91,31 +94,7 @@ public class Event implements Serializable {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Event(String eventId, String eventName, String eventProblem, String committeeorstartby, Status state,
-			String city, String district, String taluka, String eventDescription, Integer numberOfParticipants,
-			String participantsType, String admins, String emailId, String mobileNumber, String eventLeaders,
-			String partySupported, EventType type, Timestamp startDate, Timestamp lastUpdate) {
-		super();
-		this.eventId = eventId;
-		this.eventName = eventName;
-		this.eventProblem = eventProblem;
-		this.committeeorstartby = committeeorstartby;
-		this.state = state;
-		this.city = city;
-		this.district = district;
-		this.taluka = taluka;
-		this.eventDescription = eventDescription;
-		this.numberOfParticipants = numberOfParticipants;
-		this.participantsType = participantsType;
-		this.admins = admins;
-		this.emailId = emailId;
-		this.mobileNumber = mobileNumber;
-		this.eventLeaders = eventLeaders;
-		this.partySupported = partySupported;
-		this.type = type;
-		this.startDate = startDate;
-		this.lastUpdate = lastUpdate;
-	}
+	 
 
 	/**
 	 * @return the eventId
@@ -124,12 +103,16 @@ public class Event implements Serializable {
 		return eventId;
 	}
 
+
+
 	/**
 	 * @param eventId the eventId to set
 	 */
 	public void setEventId(String eventId) {
 		this.eventId = eventId;
 	}
+
+
 
 	/**
 	 * @return the eventName
@@ -138,12 +121,16 @@ public class Event implements Serializable {
 		return eventName;
 	}
 
+
+
 	/**
 	 * @param eventName the eventName to set
 	 */
 	public void setEventName(String eventName) {
 		this.eventName = eventName;
 	}
+
+
 
 	/**
 	 * @return the eventProblem
@@ -152,12 +139,16 @@ public class Event implements Serializable {
 		return eventProblem;
 	}
 
+
+
 	/**
 	 * @param eventProblem the eventProblem to set
 	 */
 	public void setEventProblem(String eventProblem) {
 		this.eventProblem = eventProblem;
 	}
+
+
 
 	/**
 	 * @return the committeeorstartby
@@ -166,6 +157,8 @@ public class Event implements Serializable {
 		return committeeorstartby;
 	}
 
+
+
 	/**
 	 * @param committeeorstartby the committeeorstartby to set
 	 */
@@ -173,19 +166,43 @@ public class Event implements Serializable {
 		this.committeeorstartby = committeeorstartby;
 	}
 
+
+
 	/**
 	 * @return the state
 	 */
-	public Status getState() {
+	public String getState() {
 		return state;
 	}
+
+
 
 	/**
 	 * @param state the state to set
 	 */
-	public void setState(Status state) {
+	public void setState(String state) {
 		this.state = state;
 	}
+
+
+
+	/**
+	 * @return the status
+	 */
+	public Status getStatus() {
+		return status;
+	}
+
+
+
+	/**
+	 * @param status the status to set
+	 */
+	public void setStatus(Status status) {
+		this.status = status;
+	}
+
+
 
 	/**
 	 * @return the city
@@ -194,12 +211,16 @@ public class Event implements Serializable {
 		return city;
 	}
 
+
+
 	/**
 	 * @param city the city to set
 	 */
 	public void setCity(String city) {
 		this.city = city;
 	}
+
+
 
 	/**
 	 * @return the district
@@ -208,12 +229,16 @@ public class Event implements Serializable {
 		return district;
 	}
 
+
+
 	/**
 	 * @param district the district to set
 	 */
 	public void setDistrict(String district) {
 		this.district = district;
 	}
+
+
 
 	/**
 	 * @return the taluka
@@ -222,12 +247,16 @@ public class Event implements Serializable {
 		return taluka;
 	}
 
+
+
 	/**
 	 * @param taluka the taluka to set
 	 */
 	public void setTaluka(String taluka) {
 		this.taluka = taluka;
 	}
+
+
 
 	/**
 	 * @return the eventDescription
@@ -236,12 +265,16 @@ public class Event implements Serializable {
 		return eventDescription;
 	}
 
+
+
 	/**
 	 * @param eventDescription the eventDescription to set
 	 */
 	public void setEventDescription(String eventDescription) {
 		this.eventDescription = eventDescription;
 	}
+
+
 
 	/**
 	 * @return the numberOfParticipants
@@ -250,12 +283,16 @@ public class Event implements Serializable {
 		return numberOfParticipants;
 	}
 
+
+
 	/**
 	 * @param numberOfParticipants the numberOfParticipants to set
 	 */
 	public void setNumberOfParticipants(Integer numberOfParticipants) {
 		this.numberOfParticipants = numberOfParticipants;
 	}
+
+
 
 	/**
 	 * @return the participantsType
@@ -264,12 +301,16 @@ public class Event implements Serializable {
 		return participantsType;
 	}
 
+
+
 	/**
 	 * @param participantsType the participantsType to set
 	 */
 	public void setParticipantsType(String participantsType) {
 		this.participantsType = participantsType;
 	}
+
+
 
 	/**
 	 * @return the admins
@@ -278,12 +319,16 @@ public class Event implements Serializable {
 		return admins;
 	}
 
+
+
 	/**
 	 * @param admins the admins to set
 	 */
 	public void setAdmins(String admins) {
 		this.admins = admins;
 	}
+
+
 
 	/**
 	 * @return the emailId
@@ -292,12 +337,16 @@ public class Event implements Serializable {
 		return emailId;
 	}
 
+
+
 	/**
 	 * @param emailId the emailId to set
 	 */
 	public void setEmailId(String emailId) {
 		this.emailId = emailId;
 	}
+
+
 
 	/**
 	 * @return the mobileNumber
@@ -306,12 +355,16 @@ public class Event implements Serializable {
 		return mobileNumber;
 	}
 
+
+
 	/**
 	 * @param mobileNumber the mobileNumber to set
 	 */
 	public void setMobileNumber(String mobileNumber) {
 		this.mobileNumber = mobileNumber;
 	}
+
+
 
 	/**
 	 * @return the eventLeaders
@@ -320,12 +373,16 @@ public class Event implements Serializable {
 		return eventLeaders;
 	}
 
+
+
 	/**
 	 * @param eventLeaders the eventLeaders to set
 	 */
 	public void setEventLeaders(String eventLeaders) {
 		this.eventLeaders = eventLeaders;
 	}
+
+
 
 	/**
 	 * @return the partySupported
@@ -334,12 +391,16 @@ public class Event implements Serializable {
 		return partySupported;
 	}
 
+
+
 	/**
 	 * @param partySupported the partySupported to set
 	 */
 	public void setPartySupported(String partySupported) {
 		this.partySupported = partySupported;
 	}
+
+
 
 	/**
 	 * @return the type
@@ -348,12 +409,16 @@ public class Event implements Serializable {
 		return type;
 	}
 
+
+
 	/**
 	 * @param type the type to set
 	 */
 	public void setType(EventType type) {
 		this.type = type;
 	}
+
+
 
 	/**
 	 * @return the startDate
@@ -362,12 +427,16 @@ public class Event implements Serializable {
 		return startDate;
 	}
 
+
+
 	/**
 	 * @param startDate the startDate to set
 	 */
 	public void setStartDate(Timestamp startDate) {
 		this.startDate = startDate;
 	}
+
+
 
 	/**
 	 * @return the lastUpdate
@@ -376,6 +445,8 @@ public class Event implements Serializable {
 		return lastUpdate;
 	}
 
+
+
 	/**
 	 * @param lastUpdate the lastUpdate to set
 	 */
@@ -383,13 +454,16 @@ public class Event implements Serializable {
 		this.lastUpdate = lastUpdate;
 	}
 
-	
+
+
 	/**
 	 * @return the isActive
 	 */
 	public Boolean getIsActive() {
 		return isActive;
 	}
+
+
 
 	/**
 	 * @param isActive the isActive to set
@@ -398,9 +472,9 @@ public class Event implements Serializable {
 		this.isActive = isActive;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
+
+
+	/* (non-Javadoc)
 	 * @see java.lang.Object#hashCode()
 	 */
 	@Override
@@ -417,6 +491,7 @@ public class Event implements Serializable {
 		result = prime * result + ((eventLeaders == null) ? 0 : eventLeaders.hashCode());
 		result = prime * result + ((eventName == null) ? 0 : eventName.hashCode());
 		result = prime * result + ((eventProblem == null) ? 0 : eventProblem.hashCode());
+		result = prime * result + ((isActive == null) ? 0 : isActive.hashCode());
 		result = prime * result + ((lastUpdate == null) ? 0 : lastUpdate.hashCode());
 		result = prime * result + ((mobileNumber == null) ? 0 : mobileNumber.hashCode());
 		result = prime * result + ((numberOfParticipants == null) ? 0 : numberOfParticipants.hashCode());
@@ -424,14 +499,15 @@ public class Event implements Serializable {
 		result = prime * result + ((partySupported == null) ? 0 : partySupported.hashCode());
 		result = prime * result + ((startDate == null) ? 0 : startDate.hashCode());
 		result = prime * result + ((state == null) ? 0 : state.hashCode());
+		result = prime * result + ((status == null) ? 0 : status.hashCode());
 		result = prime * result + ((taluka == null) ? 0 : taluka.hashCode());
 		result = prime * result + ((type == null) ? 0 : type.hashCode());
 		return result;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
+
+
+	/* (non-Javadoc)
 	 * @see java.lang.Object#equals(java.lang.Object)
 	 */
 	@Override
@@ -493,6 +569,11 @@ public class Event implements Serializable {
 				return false;
 		} else if (!eventProblem.equals(other.eventProblem))
 			return false;
+		if (isActive == null) {
+			if (other.isActive != null)
+				return false;
+		} else if (!isActive.equals(other.isActive))
+			return false;
 		if (lastUpdate == null) {
 			if (other.lastUpdate != null)
 				return false;
@@ -528,6 +609,8 @@ public class Event implements Serializable {
 				return false;
 		} else if (!state.equals(other.state))
 			return false;
+		if (status != other.status)
+			return false;
 		if (taluka == null) {
 			if (other.taluka != null)
 				return false;
@@ -537,6 +620,8 @@ public class Event implements Serializable {
 			return false;
 		return true;
 	}
+
+
 
 	/*
 	 * (non-Javadoc)
@@ -551,6 +636,11 @@ public class Event implements Serializable {
 				+ numberOfParticipants + ", participantsType:" + participantsType + ", admins:" + admins + ", emailId:"
 				+ emailId + ", mobileNumber:" + mobileNumber + ", eventLeaders:" + eventLeaders + ", partySupported:"
 				+ partySupported + ", type:" + type + ", startDate:" + startDate + ", lastUpdate:" + lastUpdate + "}";
+	}
+	
+	public static void main(String[] args) {
+		Event event = new Event();
+		System.out.println(event.toString());
 	}
 
 }

@@ -1,5 +1,7 @@
 package com.indian.andolan.endpoint;
 
+import java.sql.Timestamp;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.indian.andolan.enums.Status;
 import com.indian.andolan.model.Event;
 import com.indian.andolan.service.impl.EventServiceImpl;
 import com.indian.andolan.tokengenerator.SecureTokenGenerator;
@@ -47,8 +50,14 @@ public class EventEndpoint {
 	
 	@PostMapping(consumes = { MediaType.APPLICATION_JSON_VALUE })
 	public ResponseEntity<Event> addEvent(@RequestBody @Valid Event event) {
+		System.out.println( event);
 		String id = SecureTokenGenerator.getToken();
 		event.setEventId(id);
+		event.setStartDate(new Timestamp(System.currentTimeMillis()));
+		event.setIsActive(Boolean.FALSE);
+		event.setEventLeaders(event.getAdmins());
+		event.setStatus(Status.INPROGRESS);
+		event.setLastUpdate(new Timestamp(System.currentTimeMillis()));
 		return new ResponseEntity<Event>(service.repository().save(event), HttpStatus.OK);
 	}
 

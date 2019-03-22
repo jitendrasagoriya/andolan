@@ -33,6 +33,13 @@ public enum EventType {
 	    }
 	 }
 	
+	public static Map<Integer, String> getMap(){
+		Map<Integer, String> map = new HashMap<>();
+		 for (EventType e : EventType.values() ) {
+			 map.put(e.id, e.value);
+		 }
+		return map;
+	}
 	
 	public static EventType getById(int id) {
 	    return byId.get(id);

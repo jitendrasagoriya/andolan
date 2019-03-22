@@ -28,6 +28,13 @@ public enum Status {
 	    }
 	 }
 	
+	public static Map<Integer, String> getMap(){
+		Map<Integer, String> map = new HashMap<>();
+		 for (Status e : Status.values() ) {
+			 map.put(e.id, e.value);
+		 }
+		return map;
+	}
 	
 	public static Status getById(int id) {
 	    return byId.get(id);
